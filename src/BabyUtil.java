@@ -76,8 +76,7 @@ public class BabyUtil {
         }
     }
 
-    public void addBabyName
-            (){
+    public void addBabyName(){
         System.out.println("Enter your Baby name");
         Scanner scanner = new Scanner(System.in);
         int option;
