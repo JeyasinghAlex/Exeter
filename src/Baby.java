@@ -9,9 +9,8 @@ public class Baby {
 
     @Override
     public String toString() {
-        return "Baby{" +
-                "name='" + name + '\'' +
-                ", gender='" + gender + '\'' +
-                '}';
+        return "Baby " +
+                "name = " + name  +
+                ", gender = " + gender;
     }
 }

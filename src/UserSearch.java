@@ -6,11 +6,11 @@ public class UserSearch {
     static ArrayList<Baby> babyArrayList = new ArrayList<>();
     static BabyUtil babyUtil = new BabyUtil();
     public static void main(String[] args) {
-        creatBaby();
-        searchBaby();
+        createBabyNames();
+        searchBabyNames();
     }
 
-    public static void searchBaby() {
+    public static void searchBabyNames() {
         Scanner scan = new Scanner(System.in);
         int option = 0;
         System.out.println("1) Search by Starting letter");
@@ -24,7 +24,7 @@ public class UserSearch {
             System.out.println("Type of Exception = "+ex);
             System.out.println("Invalid option, Please enter the correct option");
             System.out.println();
-            searchBaby();
+            searchBabyNames();
         }
 
         switch(option)
@@ -46,19 +46,19 @@ public class UserSearch {
             }
             case 4:
             {
-                babyUtil.addBaby();
+                babyUtil.addBabyName();
                 break;
             }
             default:
             {
                 System.out.println("Invalid Option, Please Enter correct option");
-                searchBaby();
+                searchBabyNames();
                 break;
             }
         }
     }
 
-    public static void creatBaby() {
+    public static void createBabyNames() {
             babyArrayList.add(new Baby("jeyasingh","male"));
             babyArrayList.add(new Baby("alex", "male"));
             babyArrayList.add(new Baby("selvi", "female"));
@@ -105,8 +105,8 @@ public class UserSearch {
             babyArrayList.add(new Baby("aruna", "female"));
     }
 
-    public static void addBaby(String name, String gender){
+    public static void addBabyName(String name, String gender){
         babyArrayList.add(new Baby(name, gender));
-        searchBaby();
+        searchBabyNames();
     }
 }

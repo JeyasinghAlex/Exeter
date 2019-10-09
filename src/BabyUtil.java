@@ -8,19 +8,18 @@ public class BabyUtil {
         char ch = scan.next().charAt(0);
         for(int i = 0; i < UserSearch.babyArrayList.size(); i++){
             if(ch == UserSearch.babyArrayList.get(i).name.charAt(0)){
-                //System.out.println(UserSearch.babyArrayList.get(i).name+" -> "+UserSearch.babyArrayList.get(i).gender);
-                System.out.println(UserSearch.babyArrayList.get(i).toString());
+                                System.out.println(UserSearch.babyArrayList.get(i).toString());
                 result = true;
             }
         }
         if(!result){
             System.out.println("Didn't find any baby name");
             System.out.println();
-            UserSearch.searchBaby();
+            UserSearch.searchBabyNames();
         }else{
             System.out.println("Search Successfully");
             System.out.println();
-            UserSearch.searchBaby();
+            UserSearch.searchBabyNames();
         }
     }
 
@@ -35,26 +34,26 @@ public class BabyUtil {
             case 1:
             {
                 String gender = "male";
-                searchBaby(gender, UserSearch.babyArrayList);
+                searchBabyName(gender, UserSearch.babyArrayList);
                 break;
             }
             case 2:
             {
                 String gender = "female";
-                searchBaby(gender, UserSearch.babyArrayList);
+                searchBabyName(gender, UserSearch.babyArrayList);
                 break;
             }
         }
     }
 
-    public void searchBaby(String gender, ArrayList<Baby> babyArrayList){
+    public void searchBabyName(String gender, ArrayList<Baby> babyArrayList){
         for(int i = 0; i < babyArrayList.size(); i++){
             if(babyArrayList.get(i).gender.equals(gender)){
                 System.out.println(babyArrayList.get(i).toString());
             }
         }
         System.out.println();
-        UserSearch.searchBaby();
+        UserSearch.searchBabyNames();
     }
 
     public void searchByTotalLetters(){
@@ -69,17 +68,17 @@ public class BabyUtil {
         }
         if(!result){
             System.out.println("Cann't find any baby name");
-            UserSearch.creatBaby();
+            UserSearch.createBabyNames();
         }else{
             System.out.println("Search Successfully");
             System.out.println();
-            UserSearch.searchBaby();
+            UserSearch.searchBabyNames();
         }
     }
 
-    public void addBaby(){
+    public void addBabyName
+            (){
         System.out.println("Enter your Baby name");
-        //String s = scan.nextLine();
         Scanner scanner = new Scanner(System.in);
         int option;
         String name = scanner.nextLine();
@@ -92,13 +91,13 @@ public class BabyUtil {
             case 1:
             {
                 String gender = "male";
-                UserSearch.addBaby(name, gender);
+                UserSearch.addBabyName(name, gender);
                 break;
             }
             case 2:
             {
                 String gender = "female";
-                UserSearch.addBaby(name, gender);
+                UserSearch.addBabyName(name, gender);
                 break;
             }
             default:
