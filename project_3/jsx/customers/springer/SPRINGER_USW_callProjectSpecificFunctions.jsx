@@ -1,0 +1,1 @@
+﻿aboveRuleFirstAff("//div[@class='jrnlAffGroup']");

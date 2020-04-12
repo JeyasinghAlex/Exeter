@@ -1,0 +1,46 @@
+{
+  "collectdata": {
+    "copyfiles": {
+		"templates/bmj/BMJ_BMJQS_indesignAutoPage.indt":{
+			"target": "template",
+			"name": "{jobNumber}.indt"
+		},
+        "scripts/bmj/BMJ_BMJQS.indl" : {
+			"target": "scripts",
+			"name": "BMJ_BMJQS.indl"
+		},
+		"scripts/bmj/BMJ_BMJQS_callProjectSpecificFunctions.jsx": {
+			"target": "scripts",
+			"name": "BMJ_BMJQS_callProjectSpecificFunctions.jsx"
+		},
+		"scripts/bmj/BMJ_BMJQS_indesignAutoPageConfig.jsx": {
+			"target": "scripts",
+			"name": "BMJ_BMJQS_indesignAutoPageConfig.jsx"
+		},
+		"logos/bmj/{proofType}/BMJ_Health_Foundation_CMYK.tif": {
+			"target": "logos/{proofType}",
+			"name": "BMJ_Health_Foundation_CMYK.tif"
+		},
+		"logos/bmj/{proofType}/BMJ_Logo_CMYK.eps": {
+			"target": "logos/{proofType}",
+			"name": "BMJ_Logo_CMYK.eps"
+		},
+		"logos/bmj/{proofType}/BMJ_OPEN_ACCESS_BW.eps": {
+			"target": "logos/{proofType}",
+			"name": "BMJ_OPEN_ACCESS_BW.eps"
+		},
+		"logos/bmj/{proofType}/BMJ_CrossMark_small_CMYK.eps": {
+			"target": "logos/{proofType}",
+			"name": "BMJ_CrossMark_small_CMYK.eps"
+		},
+		"logos/bmj/{proofType}/RELATED_ARTICLE.eps": {
+			"target": "logos/{proofType}",
+			"name": "RELATED_ARTICLE.eps"
+		},
+		"logos/bmj/{proofType}/CrossMark_CMYK.eps": {
+			"target": "logos/{proofType}",
+			"name": "CrossMark_CMYK.eps"
+		}
+      }
+  }
+}

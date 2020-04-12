@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0"
+xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+<xsl:template match = "/">
+<html>
+<body>
+    <h2>Hi I am Alex Sparrow</h2>
+    <table border = "1">
+        <tr bgcolor = "green">
+            <th>name</th>
+            <th>village</th>
+            <th>vendruu</th>
+        </tr>
+        <p>
+            <xsl:attribute name = "alex">
+            <xsl:value-of select = "@id">
+        </xsl:attribute>
+        </p>          
+        <xsl:for-each select = "school/student">     
+        <tr>
+            <td><xsl:value-of select = "name"/></td>
+            <td><xsl:value-of select = "village"/></td>
+        </tr>
+        </xsl:for-each>
+    </table>
+</body>
+</html>
+</xsl:template>
+</xsl:stylesheet>
+                         <!--xsl:attribute name="alex">
+                         <xsl:value-of select="@id">
+                         </xsl:attribute-->

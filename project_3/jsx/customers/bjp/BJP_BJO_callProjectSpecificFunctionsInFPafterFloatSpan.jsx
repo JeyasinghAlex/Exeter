@@ -1,0 +1,1 @@
+﻿figcaptionLeftalignment("jrnlFigBlock","p[@pstyle='jrnlFigCaption']");

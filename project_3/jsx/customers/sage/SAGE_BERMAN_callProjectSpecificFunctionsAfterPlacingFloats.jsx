@@ -1,0 +1,1 @@
+﻿placeMarginalNotes("//div[@class='jrnlMarginBlock']", layerTemplateScript, 'MN', "versoMN", "rectoMN");

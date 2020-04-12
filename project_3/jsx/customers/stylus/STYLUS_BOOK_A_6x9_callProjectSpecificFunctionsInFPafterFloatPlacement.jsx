@@ -1,0 +1,1 @@
+﻿collectingLandscapeFloatContinuedInfo(floatsToBeLocated,config.docFloatIDsArray,currPage)

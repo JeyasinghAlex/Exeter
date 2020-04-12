@@ -1,0 +1,14 @@
+﻿alignStubFramesToAbsHead(myDoc, 'STUB_COLUMN', 'MEAPURGS_jrnlHead1_First|PMS_jrnlAuthors|jrnlAbsBoxedText|jrnlAbsHead|jrnlAbsPara|jrnlHead1_First|PDAYAD_jrnlHead1_First|TXT_CHAP_FIRST|PDAYAD_TXT_CHAP_FIRST', 'ascent');
+addNonBreakSpBeforeEmail("//span[@class='jrnlCorrEmail'][not(ancestor::div[@class='sub-article'])]|//span[@class='jrnlEmail'][not(ancestor::div[@class='sub-article'])]");
+jrnlDateCommonStyle('jrnlReDate,OLAE_jrnlReDate,REVIEW_jrnlReDate,PDAYAD_jrnlReDate,CSST_jrnlReDate,jrnlRevDate,OLAE_jrnlRevDate,REVIEW_jrnlRevDate,PDAYAD_jrnlRevDate,CSST_jrnlRevDate,jrnlAcDate,MEAPURGS_jrnlAcDate,OLAE_jrnlAcDate,REVIEW_jrnlAcDate,PDAYAD_jrnlAcDate,CSST_jrnlAcDate,jrnlEPubDate');
+stackStubFrames();
+splitFramesIntoTwo("//p[@pstyle='jrnlAuthors']|//p[@pstyle='MEAPURGS_jrnlAuthors']|//p[@pstyle='RHUE_jrnlAuthors']|//p[@pstyle='INFOGRAPHICS_jrnlAuthors']|//p[@pstyle='PDAYAD_jrnlAuthors']|//p[@pstyle='REVIEW_jrnlAuthors']|//p[@pstyle='CSST_jrnlAuthors']|//p[@pstyle='OLAE_jrnlAuthors']");
+placeComBoxLib("//div[@class='jrnlAbsBox']", layerTemplateScript, 'placeLibInline');
+moveBlockToColumnBottom(162.092, "//div[@class='jrnlFNTxtBlock']", 'TXT_FN');
+placePhotos("//div[@class='body']", "//pFig[@class='ED_IMG']");
+removeOpenAccLogo("//p[@pstyle='jrnlLicense']");
+_web_links("CrossMark_CMYK.eps|CrossMark_BW.eps","//span[@class='jrnlDOI'],//p[@pstyle='jrnlDOI']");
+addSpBeforePara('POSCRWUE_jrnlAuthors,jrnlPresentAddrFN,jrnlCorrNoticeFN,jrnlSocialFN,jrnlAckGroup,jrnlNoteHeadFN,jrnlCollabFN,jrnlConFN,jrnlFundGroup,jrnlDisclaimerFN,jrnlConfFN,jrnlPatientFN,jrnlEthicsFN,jrnlPeerReviewFN,jrnlDataSharingFN,jrnlLicense,jrnlCopyrightStmt', 12);
+findAndReplaceSpecialCharacter("ClassGarmnd BT","Roman","µ","Times New Roman","Regular");
+findAndReplaceSpecialCharacter("Frutiger LT Pro","47 Light Condensed","'","Frutiger LT Pro","47 Light Condensed","’");
+dublin_core_metadata();

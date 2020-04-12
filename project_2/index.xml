@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="index.xsl"?>
+
+<catalog>
+    <cd>
+        <title id = "1">harry pattor</title>
+        <artist>J. K. Rowling</artist>
+        <country>British</country>
+        <company>abcd</company>
+        <price>12</price>
+        <year>1997</year>
+    </cd>
+
+    <cd>
+        <title id = "2">rich dad poor dad</title>
+        <artist> Robert Kiyosaki</artist>
+        <country>Jappan</country>
+        <company>xyz</company>
+        <price>5</price>
+        <year>1963</year>
+    </cd>
+    
+    <cd>
+        <title id = "3">commpound</title>
+        <artist>S. A. Man Bodeen</artist>
+        <country>uk</country>
+        <company>lmn</company>
+        <price>15</price>
+        <year>2002</year>
+    </cd>
+
+     <cd>
+        <title id = "4">the good earth</title>
+        <artist>Pearl S. Buck</artist>
+        <country>chinna</country>
+        <company>opq</company>
+        <price>8</price>
+        <year>1600</year>
+    </cd>
+
+</catalog>
+
+                                                     

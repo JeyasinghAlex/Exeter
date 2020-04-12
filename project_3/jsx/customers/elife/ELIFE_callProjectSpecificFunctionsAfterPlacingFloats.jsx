@@ -1,0 +1,10 @@
+﻿eLifeAddBoxSideBar(layerTemplateScript, "//div[@class='jrnlBoxBlock']|//div[@class='jrnlPullQuoteBlock']");
+spitFramesInAppBlock();
+videoLogo("//div[@proof-type]","//div[@class='jrnlVidBlock']|//div[@class='jrnlVidBlockGroup']");
+//appendixBgScreen("//div[@class='jrnlAppBlock']/div[@class='jrnlAppBlock']","jrnlAppHead2",6);
+appendixBgScreen("//div[@class='jrnlAppGroup']/div[@class='jrnlAppBlock']", "TEMPLATE5_jrnlAppHead2|jrnlAppHead2", 19, 12, 6, 18);
+findDestPageAndHyperlink("//p//span[@cstyle='jrnlFundingPointer'],//h2[@pstyle='jrnlFundingHead']");
+findDestPageAndHyperlink("//p//span[@cstyle='jrnlFundingPointer'],//h2[@pstyle='TEMPLATE5_jrnlFundingHead']");
+findDestPageAndHyperlink("//p//span[@cstyle='jrnlCompIntPointer'],//h2[@pstyle='jrnlConfHead']");
+Elife_splitFramesIntoTwoAndContPage("//p[@pstyle='jrnlKeyResourceTblHead']");
+pageStartingFirstLineHeadRuleOff("//h1[@pstyle='jrnlRefHead']|//h1[@pstyle='jrnlAddFilesHead']|//h1[@pstyle='jrnlAddMaterialHead']");

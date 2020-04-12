@@ -1,0 +1,88 @@
+[
+    [
+        {
+            "task": "fetchIssueXML",
+            "description": "fetch issue xml",
+            "parameters": {
+                "url": "https://{siteName}/api/getissuedata?apiKey=0e78ffad-4705-414b-836e-b6893ab3abc6&client={customer}&jrnlName={project}&fileName={project}_{volume}_{issue}.xml&process=getIssueXML&returnType=xml",
+                "path": "{customer}/{project}/{jobid}",
+                "fileName": "{project}_{volume}_{issue}.xml",
+                "contentType": "application/xml",
+                "method": "GET"
+            }       
+        }
+    ],
+    {
+        "task": "getTOCDetails",
+        "description": "Get latest article details from api and update in issue xml",
+        "parameters": {
+            "issueXMLPath":"{customer}/{project}/{jobid}/{project}_{volume}_{issue}.xml",
+            "output": "{customer}/{project}/{jobid}/{project}_{volume}_{issue}.xml",
+            "contentType": "application/xml",
+            "method": "GET",
+            "parameters": "doi={doi};;customer={customer};;proof={proofType};;volume={volume};;issue={issue};;fpage={fpage};;journal={project};;cmsId={cmsID};;issueMakeup={issueMakeup};;kriyaVersion={kriyaVersion};;draftIssue={draftIssue}"
+        },
+        "articles": [
+            {
+                "task": "fetch",
+                "description": "fetch sub-manuscript xml",
+                "parameters": {
+                    "url": "https://{siteName}/api/getxml/?apiKey=0e78ffad-4705-414b-836e-b6893ab3abc6&doi={doi}&customer={customer}&project={project}&xmltype=raw",
+                    "path": "{customer}/{project}/{jobid}",
+                    "fileName": "{doi}.xml",
+                    "contentType": "application/xml",
+                    "method": "GET"
+                },
+                "conditions": {
+                    "type": "input",
+                    "check": {
+                        "proofingVersion": "v2.0"
+                    }
+                }
+            },
+            {
+                "task": "fetch",
+                "description": "fetch sub-manuscript xml - kriya 1.0",
+                "parameters": {
+                    "url": "http://bmj.kriyadocs.com/cms/ecs_includes/v2/exportToFormatV2.php?articleID={cmsID}",
+                    "path": "{customer}/{project}/{jobid}",
+                    "fileName": "{doi}.xml",
+                    "contentType": "application/xml",
+                    "method": "GET"
+                },
+                "conditions": {
+                    "type": "input",
+                    "check": {
+                        "proofingVersion": "v1.0"
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "task": "getManusctiptIndex",
+        "description": "Populate Author details of all articles",
+        "parameters": {
+            "issueXMLPath": "{customer}/{project}/{jobid}/{project}_{volume}_{issue}.xml",
+            "output": "{customer}/{project}/{jobid}/{doi}_1.xml",
+            "parameters": "doi={doi};;customer={customer};;proof={proofType};;volume={volume};;issue={issue};;fpage={fpage};;journal={project};;cmsId={cmsID};;issueMakeup={issueMakeup};;kriyaVersion={kriyaVersion}"
+        }
+    },
+    {
+        "task":"indexGeneration",
+        "description":"Post manuscriptIndex xml to resourceManager indexGeneration api",
+        "parameters":{
+            "xmlPath":"{customer}/{project}/{jobid}/{doi}_1.xml",
+            "output":"{customer}/{project}/{jobid}/{jobid}.xml",
+            "indexGenURL":"http://172.31.13.7:9080/ContentStructuring/indexGeneration/indexGen.php",
+            "parameters": "doi={doi};;customer={customer};;proof={proofType};;volume={volume};;issue={issue};;fpage={fpage};;journal={project};;cmsId={cmsID};;issueMakeup={issueMakeup};;kriyaVersion={kriyaVersion}"
+        }
+    },
+    {
+        "task": "readFile",
+        "description": "Return the data of file in path",
+        "parameters": {
+            "xmlPath": "{customer}/{project}/{jobid}/{jobid}.xml"
+        }
+    }
+]

@@ -1,0 +1,1 @@
+﻿figBottomAndTopCaptionForMargCol("Bottom_Caption", "VERSOCapTop", "RECTOCapTop", "VERSOCapBot", "RECTOCapBot");

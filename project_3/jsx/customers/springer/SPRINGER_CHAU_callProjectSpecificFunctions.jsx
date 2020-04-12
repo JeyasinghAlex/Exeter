@@ -1,0 +1,14 @@
+﻿alignStubFramesToAbsHead(myDoc, 'STUB_COLUMN', 'MEAPURGS_jrnlHead1_First|PMS_jrnlAuthors|jrnlAbsBoxedText|jrnlAbsHead|jrnlAbsPara|jrnlHead1_First|TXT_CHAP_FIRST', 'ascent');
+addNonBreakSpBeforeEmail("//span[@class='jrnlCorrEmail']|//span[@class='jrnlEmail']|//span[@class='jrnlEmail']|//span[@class='jrnlCorrEmail']");
+jrnlDateCommonStyle('jrnlReDate,jrnlRevDate,jrnlAcDate,MEAPURGS_jrnlAcDate');
+stackStubFrames();
+splitFramesIntoTwo("//p[@pstyle='jrnlAuthors']|//p[@pstyle='MEAPURGS_jrnlAuthors']|//p[@pstyle='RHUE_jrnlAuthors1']|//p[@pstyle='INFOGRAPHICS_jrnlAuthors']");
+placeComBoxLib("//div[@class='jrnlAbsBox']", layerTemplateScript, 'placeLibInline');
+moveBlockToColumnBottom(162.092, "//div[@class='jrnlFNTxtBlock']", 'TXT_FN');
+placePhotos("//div[@class='body']", "//pFig[@class='ED_IMG']");
+removeOpenAccLogo("//p[@pstyle='jrnlLicense']");
+_web_links("CrossMark_BW.eps|BMJ_CrossMark_small_BW.eps","//span[@class='jrnlDOI'],//p[@pstyle='jrnlDOI']");
+addSpBeforePara('POSCRWUE_jrnlAuthors,jrnlCorrNoticeFN,jrnlSocialFN,jrnlAckGroup,jrnlNoteHeadFN,jrnlCollabFN,jrnlConFN,jrnlFundGroup,jrnlDisclaimerFN,jrnlConfFN,jrnlPatientFN,jrnlEthicsFN,jrnlPeerReviewFN,jrnlDataSharingFN,jrnlLicense,jrnlCopyrightStmt', 12);
+findAndReplaceSpecialCharacter("ClassGarmnd BT","Roman","µ","Times New Roman","Regular");
+findAndReplaceSpecialCharacter("Frutiger LT Pro","47 Light Condensed","'","Frutiger LT Pro","47 Light Condensed","’");
+changePrintConditionalTexttoeloc();

@@ -1,0 +1,1 @@
+﻿hyperlinkColorInCharaterStyle("jrnlArtDoi","HYPERLINK");

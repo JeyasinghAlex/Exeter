@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="D:\XML\demo.xsl"?>
+
+<school>
+    <student id = "one">
+        <name>Jeyasingh</name>
+        <age>16</age>
+        <class>12</class>
+        <village>athichaperi</village>
+    </student>
+
+    <student id = "two">
+        <name>daniel</name>
+        <age>16</age>
+        <class>12</class>
+        <village>mavadi</village>
+    </student>
+
+    <student id = "three">
+        <name>stalin</name>
+        <age>15</age>
+        <class>12</class>
+        <village>nep</village>
+    </student>
+
+    <student id = "four">
+        <name>selva</name>
+        <age>12</age>
+        <class>11</class>
+        <village>idayankulam</village>
+    </student>
+
+    <student id = "five">
+        <name>charless</name>
+        <age>10</age>
+        <class>6</class>
+        <village>pulavan kudiruppu</village>
+    </student>
+
+</school>
+

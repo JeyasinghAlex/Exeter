@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>table</title>
+        <h2 style="color :green">Create Table</h2>
+        <style>
+           table, th, td{
+                border: 1px solid black;
+                border-collapse : collapse;
+            }
+            th, td{
+                padding: 5px;
+                text-align:left;
+            }
+            table#momo tr:nth-child(even) {
+                background-color: #eee;
+                }
+            table#momo tr:nth-child(odd) {
+                background-color: #fff;
+                }
+            table#momo th {
+                background-color: rgb(199, 211, 147);
+                color: rgb(26, 25, 24);
+                }
+        </style>
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                  $('button').click(function(){
+                      $.get('/getpageColumnDetails', function(data, status){
+                                for (var i = 0; i < data.length; i += 1) {
+                                    $("#momo").append("<tr>"+'<td>' + data[i].type + "</td>"+'<td>'+data[i].col+'</td>'+"</tr>");
+                                }
+                      });
+                  });  
+            });
+        </script>
+    </head> 
+    <body>
+        <table id = 'momo'>
+            <tr>
+                <th>Article Type</th>
+                <th>Number Of Column</th>
+            </tr>
+           
+        </table>
+        <button>OnClick</button>
+    </body>
+        
+</html>

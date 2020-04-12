@@ -1,0 +1,1 @@
+﻿BJRmodifyDOIdropCap(proof_type);

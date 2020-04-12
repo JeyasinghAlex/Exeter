@@ -1,0 +1,1 @@
+﻿removeSpaceAfterjrnlAfff("//p[@pstyle='jrnlAff'][./following-sibling::*[1][@pstyle='jrnlAff']]");

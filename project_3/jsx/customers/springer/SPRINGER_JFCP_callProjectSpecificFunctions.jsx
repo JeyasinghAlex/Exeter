@@ -1,0 +1,1 @@
+﻿aboveRuleFirstBiography("//p[@pstyle='jrnlBiography']",22);

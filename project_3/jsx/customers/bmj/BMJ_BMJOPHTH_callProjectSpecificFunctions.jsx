@@ -1,0 +1,10 @@
+﻿alignStubFramesToAbsHead(myDoc, 'STUB_COLUMN', 'jrnlAbsHead|jrnlAbsPara|jrnlHead1_First|TXT_CHAP_FIRST', 'ascent');
+//alignStubFrameBaseToFirstFrameLastLine(myDoc, 'FIRST_FRAME', 'METAINFO');
+stackStubFrames();
+stackFramesOverLap('METAINFO,COPYRIGHTSTMT_INFO,CROSSMARK,RELATED_ARTICLE_INFO,STUB_STMT,STUB_COLUMN');
+jrnlDateCommonStyle('jrnlReDate,jrnlRevDate,jrnlAcDate');
+//~ moveNodesOnFrmToIntext('METAINFO', 'STUB_COLUMN', 'before', 'jrnlAffGroup', "//div[@class='back']", 'Author affiliations\r', 'jrnlAffHead', 'For numbered affiliations see end of article.\r', 'jrnlAff');
+addSpBeforePara('jrnlPresentAddrFN,jrnlCorrNoticeFN,jrnlHandlingEditorFN,jrnlSocialFN,jrnlAckGroup,jrnlNoteHeadFN,jrnlCollabFN,jrnlConFN,jrnlFundGroup,jrnlDisclaimerFN,jrnlConfFN,jrnlPatientFN,jrnlEthicsFN,jrnlPeerReviewFN,jrnlDataSharingFN,jrnlAuthorNoteFN,jrnlLicense,jrnlCopyrightStmt', 12);
+splitFramesIntoTwo("//p[@pstyle='jrnlAuthors']");
+placeComBoxLib("//div[@class='jrnlAbsBox']", layerTemplateScript, 'placeLibInline');
+dublin_core_metadata();

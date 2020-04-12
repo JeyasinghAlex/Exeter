@@ -1,0 +1,19 @@
+{
+  "name": "project_2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "ejs": "^2.7.4",
+    "express": "^4.17.1",
+    "xml2js": "^0.4.22",
+    "xmldom": "^0.1.27",
+    "xpath": "0.0.27"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "alex",
+  "license": "ISC"
+}

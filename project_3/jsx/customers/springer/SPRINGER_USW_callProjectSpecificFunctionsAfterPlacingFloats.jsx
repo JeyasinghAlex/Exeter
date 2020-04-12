@@ -1,0 +1,2 @@
+﻿convertGrapicToPrintVersion(proof_type);
+spanColumnValueChangeForAuthor("EDITORIAL_jrnlEmail|EDITORIAL_jrnlAff|jrnlIndAuthor");

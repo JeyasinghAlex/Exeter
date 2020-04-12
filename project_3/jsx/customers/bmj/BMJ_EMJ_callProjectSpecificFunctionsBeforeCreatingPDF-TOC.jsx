@@ -1,0 +1,1 @@
+﻿convertRectGrapicToPrintVersion(proof_type);

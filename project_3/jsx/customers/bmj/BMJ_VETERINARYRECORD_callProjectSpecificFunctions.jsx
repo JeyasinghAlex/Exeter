@@ -1,0 +1,16 @@
+﻿//alignStubFramesToAbsHead(myDoc, 'STUB_COLUMN', 'jrnlAbsHead|jrnlAbsPara|jrnlHead1_First|TXT_CHAP_FIRST|PYSY_jrnlAuthors|jrnlAuthors', 'ascent');
+addNonBreakSpBeforeEmail("//span[@class='jrnlCorrEmail']|//span[@class='jrnlEmail']|//span[@class='jrnlCorrEmail']");
+stackStubFrames();
+stackFramesOverLap('METAINFO,COPYRIGHTSTMT_INFO,CROSSMARK,RELATED_ARTICLE_INFO,STUB_STMT,STUB_COLUMN');
+//splitFramesIntoTwo("//p[@pstyle='jrnlAuthors']");
+moveBlockToColumnBottom(162.092, "//div[@class='jrnlFNTxtBlock']", 'TXT_FN');
+placePhotos("//div[@class='body']", "//pFig[@class='ED_IMG']");
+alignParaTopLineImage("//div[@class='body']", "//p[@pstyle='GLEYMEHS_ALIGN_PARA_TOP']");
+removeOpenAccLogo("//p[@pstyle='jrnlLicense']");
+_web_links("CrossMark_CMYK.eps|CrossMark_BW.eps","//span[@class='jrnlDOI'],//p[@pstyle='jrnlDOI']");
+addSpBeforePara('jrnlPresentAddrFN,jrnlCorrNoticeFN,jrnlSocialFN,jrnlAckGroup,jrnlNoteHeadFN,jrnlCollabFN,jrnlConFN,jrnlFundGroup,jrnlDisclaimerFN,jrnlConfFN,jrnlPatientFN,jrnlEthicsFN,jrnlPeerReviewFN,jrnlDataSharingFN,jrnlLicense,jrnlCopyrightStmt', 12);
+findAndReplaceSpecialCharacter("Meta Serif Pro Book","Regular","µ","Times New Roman","Regular");
+findAndReplaceSpecialCharacter("Frutiger LT Pro","47 Light Condensed","'","Frutiger LT Pro","47 Light Condensed","’");
+findAndReplaceSpecialCharacter("Meta Serif Pro Book","Regular","V̇","Times New Roman","Regular"); 
+findAndReplaceSpecialCharacter("Duplicate Ionic","Bold","V̇","Times New Roman","Bold"); 
+dublin_core_metadata();

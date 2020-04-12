@@ -1,0 +1,96 @@
+[
+    [
+        {
+            "task": "fetchIssueXML",
+            "description": "fetch issue xml",
+            "parameters": {
+                "url": "https://{siteName}/api/getissuedata?apiKey=0e78ffad-4705-414b-836e-b6893ab3abc6&client={customer}&jrnlName={project}&fileName={project}.xml&process=getIssueXML&returnType=xml",
+                "path": "{customer}/{project}/{jobid}",
+                "fileName": "{project}.xml",
+                "contentType": "application/xml",
+                "method": "GET"
+            }       
+        }
+    ],
+    {
+        "task": "getTOCDetails",
+        "description": "Get latest article details from api and update in issue xml",
+        "parameters": {
+            "issueXMLPath":"{customer}/{project}/{jobid}/{project}.xml",
+            "output": "{customer}/{project}/{jobid}/{project}_1.xml",
+            "contentType": "application/xml",
+            "method": "GET",
+            "parameters": "doi={doi};;customer={customer};;proof={proofType};;volume={volume};;issue={issue};;fpage={fpage};;journal={project};;cmsId={cmsID};;issueMakeup={issueMakeup};;kriyaVersion={kriyaVersion};;draftIssue={draftIssue};;projectType=book"
+        },
+        "conditions": {
+            "type": "input",
+            "check": {
+                "type": "toc"
+            }
+        },
+        "articles": [
+            {
+                "task": "fetch",
+                "description": "fetch manuscript xml",
+                "parameters": {
+                    "url": "https://{siteName}/api/getxml/?apiKey=0e78ffad-4705-414b-836e-b6893ab3abc6&doi={doi}&customer={customer}&project={project}&xmltype=raw",
+                    "path": "{customer}/{project}/{jobid}",
+                    "fileName": "{doi}.xml",
+                    "contentType": "application/xml",
+                    "method": "GET"
+                },
+                "conditions": {
+                    "type": "input",
+                    "check": {
+                        "proofingVersion": "v2.0"
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "task": "transformxsltProc",
+        "description": "Transform issuexml to TOC xml1",
+        "parameters": {
+            "xmlPath": "{customer}/{project}/{jobid}/{project}_1.xml",
+            "xslPath": "peripherals/customers/{customer}/getTOC.xsl",
+            "output": "{customer}/{project}/{jobid}/{doi}_1.xml",
+            "parameters": "doi={doi};;customer={customer};;journal={project};;proof={proofType};;volume={volume};;issue={issue};;fpage={fpage};;type={type}"
+        },
+        "conditions": {
+            "type": "input",
+            "check": {
+                "type": "toc"
+            }
+        }
+    },
+    {
+        "task": "transformxsltProc",
+        "description": "Add line breaks in TOC proofing xml",
+        "parameters": {
+            "xmlPath": "{customer}/{project}/{jobid}/{doi}_1.xml",
+            "xslPath": "peripherals/lineBreaks.xsl",
+            "output": "{customer}/{project}/{jobid}/{jobid}.xml",
+            "parameters": "doi={doi};;customer={customer};;proofType={proofType};;volume={volume};;issue={issue};;fpage={fpage};;tocAuthorRunOn={tocAuthorRunOn}"
+        }
+    },
+    {
+        "task": "transformxsltProc",
+        "description": "Order attributes in xml",
+        "parameters": {
+            "xmlPath": "{customer}/{project}/{jobid}/{jobid}.xml",
+            "xslPath": "orderAttributes.xsl",
+            "output": "{customer}/{project}/{jobid}/{jobid}.xml",
+            "parameters": "doi={doi};;customer={customer};;proofType={proofType};;volume={volume};;issue={issue};;tocAuthorRunOn={tocAuthorRunOn}"
+        },
+        "prettyPrint":"yes"
+
+    },
+    {
+        "task": "readFile",
+        "description": "Return the data of file in path",
+        "parameters": {
+            "xmlPath": "{customer}/{project}/{jobid}/{jobid}.xml"
+        }
+    }
+]

@@ -1,0 +1,1 @@
+﻿changeFolioType('AIRWAVES|LR');

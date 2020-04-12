@@ -1,0 +1,1 @@
+﻿remove_tblContStyle_onVersoPages("TBL_Cont");

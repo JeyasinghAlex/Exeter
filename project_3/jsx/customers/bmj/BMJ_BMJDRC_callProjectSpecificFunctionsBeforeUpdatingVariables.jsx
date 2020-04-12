@@ -1,0 +1,1 @@
+﻿addVideoIconOnBMJ("//div[@proof-type]","//div[@class='jrnlVidBlock']|//div[@class='jrnlVidBlockGroup']");

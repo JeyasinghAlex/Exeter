@@ -1,0 +1,1 @@
+﻿math_on_firstLine_of_table_caption("//floatBlock//div[@class='jrnlTblBlock']//p[@pstyle='jrnlTblCaption']//matchEqn"); // To handel above rule position of tabel while equation present in firstline of the table caption 

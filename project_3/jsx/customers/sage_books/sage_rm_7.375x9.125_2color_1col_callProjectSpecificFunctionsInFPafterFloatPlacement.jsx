@@ -1,0 +1,1 @@
+﻿moveFloatBlockToStubColumnBasedOnConfig(floatsToBeLocated,config.docFloatIDsArray)

@@ -1,0 +1,1 @@
+﻿AddRightIndentForInlineFigCaption("//div[@class='jrnlFigBlock']");

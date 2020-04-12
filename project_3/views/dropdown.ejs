@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>dropdown.alex</title>
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src = "demo.js"></script>
+
+        <style>
+            table, th, td{
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+            th, tr{
+                padding: 5px;
+                text-align: left;
+            }
+            table#momo tr:nth-child(even) {
+                background-color: #eee;
+                }
+            table#momo tr:nth-child(odd) {
+                background-color: #fff;
+                }
+            table#momo th {
+                background-color: rgb(199, 211, 147);
+                color: rgb(26, 25, 24);
+                }
+        </style>
+
+    </head>
+    <body>
+        <label>XML</label>
+        <select id = 'selectData'>
+            <option>Choose </option>    
+        </select>   
+        <button onclick="onClick()">Show</button>
+
+        <label>Sub Folder</label>
+        <select id = "subData">
+            <option>Choose</option>
+        </select>
+        <br><br><br>
+
+        <table id = "momo">
+            <tr>
+                <th>Article Type</th>
+                <th>Number Of Column</th>
+            </tr>
+        </table>
+    </body>
+</html>

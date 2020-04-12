@@ -1,0 +1,13 @@
+﻿alignStubFramesToAbsHead(myDoc, 'STUB_COLUMN', 'jrnlAbsHead|TXT_CHAP_FIRST|jrnlAbsPara|jrnlHead1_First|CSINTAADAECESY_TXT_CHAP_FIRST|CSINTAADAECESY_jrnlHead1_First', 'ascent');
+//~ moveNodesOnFrmToIntext('METAINFO', 'STUB_COLUMN', 'before', 'jrnlAffGroup', "//div[@class='back']", 'Author affiliations\r', 'jrnlAffHead', 'For numbered affiliations see end of article.\r', 'jrnlAff');
+stackStubFrames();
+splitFramesIntoTwo("//p[@pstyle='jrnlAuthors']|//p[@pstyle='CSINTAADAECESY_jrnlAuthors']");
+moveBlockToColumnBottom(162.092, "//div[@class='jrnlFNTxtBlock']", 'TXT_FN');
+placePhotos("//div[@class='body']", "//pFig[@class='ED_IMG']");
+alignParaTopLineImage("//div[@class='body']", "//pFig[@class='ALIGN_PARA_TOP']");
+removeOpenAccLogo("//p[@pstyle='jrnlLicense']");
+_web_links("CrossMark_CMYK.eps|CrossMark_BW.eps","//span[@class='jrnlDOI'],//p[@pstyle='jrnlDOI']");
+addSpBeforePara('jrnlPresentAddrFN,jrnlSocialFN1,jrnlAckGroup,jrnlNoteHeadFN,jrnlCollabFN,jrnlConFN,jrnlFundGroup,jrnlDisclaimerFN,jrnlConfFN,jrnlPatientFN,jrnlEthicsFN,jrnlPeerReviewFN,jrnlDataSharingFN,jrnlLicense,jrnlCorrNoticeFN,jrnlCopyrightStmt', 12);
+findAndReplaceSpecialCharacter("ClassGarmnd BT","Roman","µ","Times New Roman","Regular");
+findAndReplaceSpecialCharacter("Frutiger LT Pro","47 Light Condensed","'","Frutiger LT Pro","47 Light Condensed","’");
+dublin_core_metadata();

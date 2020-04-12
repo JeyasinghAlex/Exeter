@@ -1,0 +1,2 @@
+﻿PageNumberModify("VERSOFOLIO","RECTOFOLIO");
+

@@ -1,0 +1,12 @@
+﻿inlinetableBottomEdgeStroke("//div[@class='body']//Table[not(ancestor::floatBlock)]",0.5);
+inlinetableLeftRightEdgeStrokeToTbl("//div[@class='body']//Table[not(ancestor::floatBlock)]","ijsem");
+baseAlignmentForFirstPagetoapplyVJ();
+queriesPagesWithQueryNumANchor(currDocInPrg,"//floatBlock//div[@class='jrnlQueryBlock']", "//div[@doi]", "doi");
+replaceLpageValueInToCite(":", "//*[@pstyle='jrnlRRHAG']//span[@class='jrnlFPage']", "–", "//*[@pstyle='jrnlRRHAG']//span[@class='jrnlLPage']");
+replaceLpageValueInToCite(":", "//*[@pstyle='jrnlLRHAG']//span[@class='jrnlFPage']", "–", "//*[@pstyle='jrnlLRHAG']//span[@class='jrnlLPage']");
+replaceLpageValueInToCite(":", "//*[@pstyle='jrnlMetaInfoPara']//span[@class='jrnlFPage']", "–", "//*[@pstyle='jrnlMetaInfoPara']//span[@class='jrnlLPage']");
+calcParaNFloatBounds();
+removeLeftRightRuleOfTableFootNote();
+convertGrapicToPrintVersion(proof_type);
+placeOnlineBoxStmtMBS("//p[@pstyle='jrnlRefText-B2']", 0, layerTemplateScript, 'ONLINE_STMTBOX', 504.567, "//div[@proof-type]","//div/p[@pstyle='jrnlArtType']","//div/p[@pstyle='jrnlArtTitle']");
+applyingparaStyleForContinuedFigblock("//div[@class='jrnlFigBlock'][./div[@class='jrnlFigCaptionBlock']]","//div[@class='jrnlFigBlock']/div[@class='jrnlFigCaptionBlock']");

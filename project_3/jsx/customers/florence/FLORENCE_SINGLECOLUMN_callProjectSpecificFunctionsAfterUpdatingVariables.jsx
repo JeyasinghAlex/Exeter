@@ -1,0 +1,1 @@
+﻿remove_runningHead("//h1[@pstyle='jrnlAppHead1']");

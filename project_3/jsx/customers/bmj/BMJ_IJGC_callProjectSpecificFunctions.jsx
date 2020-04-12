@@ -1,0 +1,13 @@
+﻿splitFramesIntoTwo("//p[@pstyle='CESS_jrnlAff']|//p[@pstyle='jrnlAuthors']|//div[@class='jrnlAuthors']|//p[@pstyle='CSOFTEWD_jrnlAuthors']");
+alignStubFramesToAbsHead(myDoc, 'STUB_COLUMN', 'jrnlAbsHead|jrnlAbsPara|jrnlHead1_First|CESS_jrnlHead1_First|CESS_TXT_CHAP_FIRST|TXT_CHAP_FIRST', 'ascent');
+//alignStubFrameBaseToFirstFrameLastLine(myDoc, 'FIRST_FRAME', 'METAINFO');
+stackStubFrames();
+jrnlDateCommonStyle('jrnlReDate,jrnlRevDate,jrnlAcDate,CESS_jrnlReDate,CESS_jrnlRevDate,CESS_jrnlAcDate');
+//~ moveNodesOnFrmToIntext('METAINFO', 'STUB_COLUMN', 'before', 'jrnlAffGroup', "//div[@class='back']", 'Author affiliations\r', 'jrnlAffHead', 'For numbered affiliations see end of article.\r', 'jrnlAff');
+placeComBoxLib("//div[@class='jrnlAbsBox']", layerTemplateScript, 'placeLibInline');
+removeOpenAccLogo("//p[@pstyle='jrnlLicense']");
+_web_links("CrossMark_CMYK.eps|CrossMark_BW.eps","//span[@class='jrnlDOI'],//p[@pstyle='jrnlDOI']");
+addSpBeforePara('jrnlCorrNoticeFN,jrnlSocialFN,jrnlAckGroup,jrnlNoteHeadFN,jrnlCollabFN,jrnlConFN,jrnlFundGroup,jrnlDisclaimerFN,jrnlConfFN,jrnlPatientFN,jrnlEthicsFN,jrnlPeerReviewFN,jrnlDataSharingFN,jrnlLicense,jrnlCopyrightStmt', 12);
+findAndReplaceSpecialCharacter("ClassGarmnd BT","Roman","µ","Times New Roman","Regular");
+findAndReplaceSpecialCharacter("Frutiger LT Pro","47 Light Condensed","'","Frutiger LT Pro","47 Light Condensed","’");
+dublin_core_metadata();

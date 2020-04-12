@@ -1,0 +1,2 @@
+﻿removeBelowRuleForArtype("//div[@doi='CN_24-2-004'  or @doi='CN_24-2-008' or @doi='CN_24-2-005'  or @doi='CN_24-2-006'  or @doi='CN_24-3-005'  or @doi='CN_24-3-004'  or @doi='CN_24-3-006'] "); // Remove ArtType content alone, Retain the Arttype ParaStyle
+//moveEditorBlockWithCaption("//div[@class='jrnlEditorImgBlock']");

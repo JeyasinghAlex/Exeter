@@ -1,0 +1,2 @@
+﻿calcParaNFloatBounds();
+boxOnlastPageFooter();

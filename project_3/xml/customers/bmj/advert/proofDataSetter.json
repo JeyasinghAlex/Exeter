@@ -1,0 +1,135 @@
+[
+    [
+        {
+            "task": "fetchIssueXML",
+            "description": "fetch issue xml",
+            "parameters": {
+                "url": "https://{siteName}/api/getissuedata?apiKey=0e78ffad-4705-414b-836e-b6893ab3abc6&client={customer}&jrnlName={project}&fileName={project}_{volume}_{issue}.xml&process=getIssueXML&returnType=xml",
+                "path": "{customer}/{project}/{jobid}",
+                "fileName": "{project}_{volume}_{issue}.xml",
+                "contentType": "application/xml",
+                "method": "GET"
+            }       
+        }
+    ],
+    {
+        "task": "transformxsltProc",
+        "description": "Transform issuexml to Cover xml",
+        "parameters": {
+            "xmlPath": "{customer}/{project}/{jobid}/{project}_{volume}_{issue}.xml",
+            "xslPath": "peripherals/getCoverHTML.xsl",
+            "output": "{customer}/{project}/{jobid}/{jobid}.xml",
+            "parameters": "doi={doi};;customer={customer};;journal={project};;proof={proofType};;volume={volume};;issue={issue};;fpage={fpage};;type={type}"
+        },
+        "parseXML": "true",
+        "conditions": {
+            "type": "input",
+            "check": {
+                "type": "cover"
+            }
+        }
+    },
+    {
+        "task": "updateTOCDetails",
+        "description": "Get latest article details from api and update in issue xml",
+        "parameters": {
+            "url":"https://{siteName}/api/getxml/?apiKey=0e78ffad-4705-414b-836e-b6893ab3abc6&doi={doi}&customer=bmj&project={project}&xmltype=raw",
+            "k1url": "http://bmj.kriyadocs.com/cms/ecs_includes/v2/exportToFormatV2.php?articleID={cmsID}",
+            "issueXMLPath":"{customer}/{project}/{jobid}/{project}_{volume}_{issue}.xml",
+            "output": "{customer}/{project}/{jobid}/{project}_{volume}_{issue}.xml",
+            "contentType": "application/xml",
+            "method": "GET",
+            "parameters": "doi={doi};;customer={customer};;proof={proofType};;volume={volume};;issue={issue};;fpage={fpage};;journal={project};;cmsId={cmsID};;issueMakeup={issueMakeup};;kriyaVersion={kriyaVersion};;draftIssue={draftIssue}"
+        },
+        "conditions": {
+            "type": "input",
+            "check": {
+                "type": "toc"
+            }
+        }
+    },
+    {
+        "task": "transformxsltProc",
+        "description": "Transform issuexml to TOC xml",
+        "parameters": {
+            "xmlPath": "{customer}/{project}/{jobid}/{doi}.xml",
+            "xslPath": "customer/getTOC.xsl",
+            "output": "{customer}/{project}/{jobid}/{doi}_1.xml",
+            "parameters": "doi={doi};;customer={customer};;proofType={proofType};;volume={volume};;issue={issue};;fpage={fpage}"
+        },
+        "conditions": {
+            "type": "input",
+            "check": {
+                "type": "toc"
+            }
+        }
+    },
+    {
+        "task": "formatTOC",
+        "description": "Add line breaks and custom formats in TOC xml",
+        "parameters": {
+            "xmlPath": "{customer}/{project}/{jobid}/{doi}_1.xml",
+            "output": "{customer}/{project}/{jobid}/{jobid}.xml",
+            "parameters": "doi={doi};;customer={customer};;proof={proofType};;volume={volume};;issue={issue};;fpage={fpage};;journal={project};;cmsId={cmsID};;issueMakeup={issueMakeup};;kriyaVersion={kriyaVersion}"
+        },
+        "conditions": {
+            "type": "input",
+            "check": {
+                "type": "toc"
+            }
+        }
+    },
+    {
+        "task": "transformxsltProc",
+        "description": "Transform issuexml to Advert xml",
+        "parameters": {
+            "xmlPath": "{customer}/{project}/{jobid}/{project}_{volume}_{issue}.xml",
+            "xslPath": "peripherals/getAdvertHTML.xsl",
+            "output": "{customer}/{project}/{jobid}/{jobid}.xml",
+            "parameters": "doi={doi};;customer={customer};;journal={project};;proof={proofType};;volume={volume};;issue={issue};;fpage={fpage};;type={type};;advertID={advertID};;region={region};;issueName={project}_{volume}_{issue}"
+        },
+        "parseXML": "true",
+        "conditions": {
+            "type": "input",
+            "check": {
+                "type": "advert"
+            }
+        }
+    },
+    {
+        "task": "transformxsltProc",
+        "description": "Transform issuexml to Advert xml",
+        "parameters": {
+            "xmlPath": "{customer}/{project}/{jobid}/{project}_{volume}_{issue}.xml",
+            "xslPath": "peripherals/getAdvertHTML.xsl",
+            "output": "{customer}/{project}/{jobid}/{jobid}.xml",
+            "parameters": "doi={doi};;customer={customer};;journal={project};;proof={proofType};;volume={volume};;issue={issue};;fpage={fpage};;type={type};;advertID={advertID};;region={region};;issueName={project}_{volume}_{issue}"
+        },
+        "parseXML": "true",
+        "conditions": {
+            "type": "input",
+            "check": {
+                "type": "advert_unpaginated"
+            }
+        }
+    },
+    {
+        "task": "transformxsltProc",
+        "description": "Order attributes in xml",
+        "parameters": {
+            "xmlPath": "{customer}/{project}/{jobid}/{jobid}.xml",
+            "xslPath": "orderAttributes.xsl",
+            "output": "{customer}/{project}/{jobid}/{jobid}.xml",
+            "parameters": "doi={doi};;customer={customer};;proofType={proofType};;volume={volume};;issue={issue};;fpage={fpage}"
+        },
+        "prettyPrint":"yes"
+
+    },
+    {
+        "task": "readFile",
+        "description": "Return the data of file in path",
+        "parameters": {
+            "xmlPath": "{customer}/{project}/{jobid}/{jobid}.xml"
+        }
+    }
+]

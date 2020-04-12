@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article type="frontiers">
+    <div type="default" class="WordSection1" id="contentDivNode">
+        <div class="front">
+            <p class="jrnlArtType"/>
+            <p class="jrnlPubDateMeta" removeifempty="true">
+                <span class="jrnlEPubDay" startPunc="published: " endPunc=" "/>
+                <span class="jrnlEPubMonth" removeifempty="true" getMonth="word" endPunc=" "/>
+                <span class="jrnlEPubYear" default="year"/>
+            </p>
+            <p class="jrnlDOIMeta">
+                <variable tag-name="a" data-attrib-name="href" data-prefix="https://doi.org/" data-variable="jrnlDOI">
+                    <variable tag-name="span" class-name="jrnlDOI" class="jrnlDOI" startPunc="doi: "/>
+                </variable>
+            </p>
+            <variable tag-name="a" data-attrib-name="href" data-prefix="https://www.frontiersin.org/articles/" data-variable="jrnlDOI" data-suffix="/full">
+                <p class="jrnlArtTitle"/>
+            </variable>
+            <p class="jrnlSTRH">
+                <span class="jrnlRRH"/>
+            </p>
+            <p class="jrnlSTLH">
+                <span class="jrnlRRH"/>
+            </p>
+            <p class="jrnlARH">
+                <span class="jrnlAuthors" maxAuthors="2" etalAuthors="1">
+                    <span class="jrnlAuthorGroup" startPunc="" interPunc=" " penultimatePunc=" and ">
+                        <span class="jrnlAuthor" startPunc="" interPunc="" penultimatePunc=" and ">
+                            <span class="jrnlSurName"/>
+                        </span>
+                    </span>
+                    <span class="jrnlEtal" startPunc=" " etalPunc="et al" endPunc="."/>
+                </span>
+            </p>
+            <p class="jrnlJVH">
+                <span class="jrnlEPubMonth" removeifempty="true" getMonth="word" endPunc=" "/>
+                <span class="jrnlEPubYear" startPunc=" " default="year" removeifempty="true"/>
+                <span class="jrnlVolume" startPunc=" | Volume " default="0" removeifempty="true"/>
+                <span class="jrnleLocation" startPunc=" | Article " removeifempty="true"/>
+            </p>
+            <p class="jrnlJT">
+                <span class="jrnlTitle" removeifempty="true"/>
+                <span class="jrnlURL" startPunc=" | " removeifempty="true">www.frontiersin.org</span>
+            </p>
+            <p class="jrnlAuthors">
+                <span class="jrnlAuthorGroup" startPunc="" interPunc="" penultimatePunc="">
+                    <span class="jrnlAuthor" endPunc="" interPunc="" penultimatePunc="">
+                        <span class="jrnlGivenName"/>
+                        <span class="jrnlSurName" startPunc=" "/>
+                    </span>
+                    <condition xpath="div[@class='front']//*[@class='jrnlAffGroup']//*[@class='jrnlAff']" count="1">
+                        <if>
+                            <sup class="jrnlAffRef" startPunc=" " endPunc="" interPunc="," penultimatePunc=","/>
+                        </if>
+                    </condition>
+                    <sup class="jrnlFirstAuthorShipRef" removeifempty="true"/>
+                    <span class="jrnlAuthorUrl" startPunc="" removeifempty="true"/>
+                    <span class="jrnlCorrRef" startPunc="" removeifempty="true"/>
+                    <sup class="jrnlEqualContribRef" removeifempty="true"/>
+                    <sup class="jrnlPresentAddrRef" startPunc="" removeifempty="true"/>
+                </span>
+            </p>
+            <p class="jrnlAffGroup">
+                <span class="jrnlAff" startPunc="" endPunc="" interPunc=", " penultimatePunc=", " removeifempty="true">
+                    <condition xpath="div[@class='front']//*[@class='jrnlAffGroup']//*[@class='jrnlAff']" count="1">
+                        <if>
+                            <sup class="jrnlAffLabel" removeifempty="true" endPunc=" "/>
+                        </if>
+                    </condition>
+                    <span class="jrnlDepartment" removeifempty="true" endPunc=", "/>
+                    <span class="jrnlInstitution" endPunc=", " removeifempty="true"/>
+                    <span class="jrnlCity" endPunc=", " removeifempty="true"/>
+                    <span class="jrnlState" endPunc=", " removeifempty="true"/>
+                    <span class="jrnlCountry" removeifempty="true"/>
+                </span>
+            </p>
+            <div class="jrnlDefBlock" removeifempty="true" section="back">
+                <p class="jrnlDefList" section="back">
+                    <span class="jrnlDefTitle" startPunc="" endPunc=": "/>
+                    <span class="jrnlDefItem" startPunc="" endPunc="." interPunc="; " penultimatePunc="; ">
+                        <span class="jrnlDefTerm" endPunc=", "/>
+                        <span class="jrnlDefinition"/>
+                    </span>
+                </p>
+            </div>
+            <div class="jrnlAbsGroup" removeifempty="true"/>
+            <p class="jrnlKwdGroup" removeifempty="true">
+                <span class="jrnlKeywordHead">Keywords: </span>
+                <span class="jrnlKeywordPara">
+                    <span class="jrnlKeyword" endPunc="" interPunc=", " penultimatePunc=", "/>
+                </span>
+            </p>
+            <div class="jrnlRelArt" removeifempty="true"/>
+            <div class="jrnlStubBlock" removeifempty="true">
+                <div class="jrnlEditorFN">
+                    <p class="jrnlEditorFNHead" startPunc="Edited by: "/>
+                    <div class="jrnlEditors" abbrevGivenNames="false">
+                        <div class="jrnlEditorGroup" startPunc="" interPunc=", " penultimatePunc=" and ">
+                            <p class="jrnlEditor" endPunc="," interPunc="" penultimatePunc=",">
+                                <span class="jrnlGivenName"/>
+                                <span class="jrnlSurName" startPunc=" "/>
+                            </p>
+                            <sup class="jrnlAffRef" getaff="true"/>
+                        </div>
+                    </div>
+                </div>
+                <condition xpath="div[@class='front']//*[@class='jrnlReviewer']" count="0">
+                    <if>
+                        <div class="jrnlReviewerFN" removeifempty="true">
+                            <p class="jrnlReviewerFNHead" startPunc="Reviewed by: "/>
+                            <div class="jrnlReviewers" removeifempty="true">
+                                <div class="jrnlReviewerGroup" startPunc="" interPunc="" penultimatePunc=" " removeifempty="true">
+                                    <p class="jrnlReviewer" endPunc="," interPunc=". " penultimatePunc=", " removeifempty="true">
+                                        <span class="jrnlGivenName" startPunc=""/>
+                                        <span class="jrnlSurName" startPunc=" " endPuc=","/>
+                                    </p>
+                                    <sup class="jrnlAffRef" getaff="true"/>
+                                </div>
+                            </div>
+                        </div>
+                    </if>
+                </condition>
+                <p class="jrnlAff" startPunc="" endPunc="" interPunc=", " penultimatePunc=", " removeNode="true"/>
+                <p class="jrnlCorrAffHead">*Correspondence:</p>
+                <p class="jrnlCorrAff" removeifempty="true"/>
+                <div class="jrnlPresentAddrFN" removeifempty="true">
+                    <p class="jrnlPresentAddrFNHead" endPunc="Present Address:" removeifempty="true"/>
+                    <p class="jrnlPresentAddrFNPara" removeifempty="true"/>
+                </div>
+                <p class="jrnlEqualContribFN" removeifempty="true" section="front">
+                    <span class="jrnlEqualContribFNHead" section="front"/>
+                    <span class="jrnlEqualContribFNPara" interPunc=" " section="front"/>
+                </p>
+                <p class="jrnlFirstAuthorFN" removeifempty="true"/>
+                <p class="jrnlSubTitle" removeifempty="true"/>
+                <p class="jrnlSharedFirstFN" removeifempty="true"/>
+                <p class="jrnlReDate" startPunc="Received: " removeifempty="true" format="[D01] [MNn] [Y0001]"/>
+                <p class="jrnlAcDate" startPunc="Accepted: " removeifempty="true" format="[D01] [MNn] [Y0001]"/>
+                <p class="jrnlEpubDate" startPunc="Published: " removeifempty="true">
+                    <span class="jrnlEPubDay" endPunc=" "/>
+                    <span class="jrnlEPubMonth" removeifempty="true" getMonth="word"/>
+                    <span class="jrnlEPubYear" startPunc=" " default="year"/>
+                </p>
+                <p class="jrnlStubCitationHead">Citation:</p>
+                <p class="stubJrnlAuthors">
+                    <span class="jrnlAuthors" maxAuthors="1000" etalAuthors="1000" abbrevGivenNames="true" endPunc="" interPunc=", " penultimatePunc=" and ">
+                        <span class="jrnlAuthorGroup" startPunc="" interPunc=", " penultimatePunc=" and ">
+                            <span class="jrnlAuthor">
+                                <span class="jrnlSurName"/>
+                                <span class="jrnlGivenName" startPunc=" "/>
+                            </span>
+                        </span>
+                    </span>
+                </p>
+                <p class="stubJrnlArtTitle">
+                    <span class="jrnlEPubYear" startPunc=" (" endPunc=") " removeifempty="true" default="year"/>
+                    <span class="jrnlArtTitle" startPunc=""/>
+                    <condition xpath="div[@class='front']//*[@class='jrnlArtTitle']" prevEndsWith="[.|?|!|,|:|;]$">
+                        <if/>
+                        <else>
+                            <span class="endPunc">.</span>
+                        </else>
+                    </condition>
+                </p>
+                <p class="stubJrnlAbbrTitle">
+                    <span class="jrnlAbbrTitle" startPunc=""/>
+                    <span class="jrnlVolume" startPunc=" "/>
+                    <span class="jrnleLocation" startPunc=":" endPunc="."/>
+                </p>
+                <variable tag-name="a" data-attrib-name="href" data-prefix="https://doi.org/" data-variable="jrnlDOI">
+                    <p class="jrnlDOI" startPunc="doi: "/>
+                </variable>
+            </div>
+        </div>
+        <div class="body"/>
+        <div class="back">
+            <div class="jrnlEthicsFN" removeifempty="true" section="front">
+                <h1 class="jrnlEthicsFNHead" section="front"/>
+                <p class="jrnlEthicsFNPara" interPunc=" " section="front"/>
+            </div>
+            <div class="jrnlConFN" removeifempty="true" section="front">
+                <h1 class="jrnlConHead" section="front"/>
+                <p class="jrnlConPara" interPunc=" " section="front"/>
+            </div>
+            <condition xpath="div[@class='jrnlFundingGroup']//*[@class='jrnlFundingStatement']">
+                <if>
+                    <h1 class="jrnlFundingHead">Funding</h1>
+                </if>
+            </condition>
+            <div class="jrnlFundingGroup" removeifempty="true" section="front"/>
+            <div class="jrnlAckGroup" removeifempty="true"/>
+            <condition xpath="div[@class='jrnlSupplBlock']">
+                <if>
+                    <h1 class="jrnlSupplHead">Supplementary Material</h1>
+                    <p class="jrnlSupplPara">The Supplementary Material for this article can be found online at: <variable tag-name="a" data-attrib-name="href" data-prefix="http://journal.frontiersin.org/article/" data-variable="jrnlDOI" data-suffix="/full#supplementary-material">
+                            <variable tag-name="span" class-name="jrnlDOI" class="jrnlDOI" startPunc="http://journal.frontiersin.org/article/" endPunc="/full#supplementary-material"/>
+                        </variable>
+                    </p>
+                </if>
+                <else/>
+            </condition>
+            <div class="jrnlRefGroup" removeifempty="true" moveOut="true">
+                <h1 class="jrnlRefHead" removeifempty="true"/>
+                <p class="jrnlRefText" removeDOIForOnline="true" removeDOIForPrint="true" removeifempty="true"/>
+            </div>
+            <div class="jrnlAppGroup" removeifempty="true" moveOut="true"/>
+            <div class="jrnlGlossaryBlock" removeifempty="true">
+                <h1 class="jrnlGlossaryTitle"/>
+                <p class="jrnlGlossaryDefItem" removeifempty="true">
+                    <span class="jrnlGlossaryDefTerm" endPunc=": "/>
+                    <span class="jrnlGlossaryDefinition"/>
+                </p>
+            </div>
+            <div class="jrnlConfFN" section="front" removeifempty="true"/>
+            <p class="jrnlPermission" section="front">
+                <span class="jrnlCopyrightStmt" endPunc=". "/>
+                <span class="jrnlLicense" removeifempty="true">
+                    <span class="jrnlLicenseRef" endPunc=" " removeifempty="true"/>
+                    <span class="jrnlLicensePara" removeifempty="true"/>
+                </span>
+            </p>
+        </div>
+    </div>
+</article>

@@ -1,0 +1,36 @@
+Fonts used in GLYPHS
+
+GLYPHS_1 - Hybrid Journals (ADC, AIM, ARD, BJO, BJSM, BMJCASEREPORT, BMJINNOV, BMJQS, BMJSPCARE, BMJSRH, BMJSTEL, EAP, EBMH, EJHP, EMJ, FG, FNN, GUT, HEART, HEARTASIA, IP, JCP, JECH, JFP, JIM, JISAKOS, JME, JMG, JNIS, JNNP, JRAMC, LEADER, MH, OEM, PMJ, PN, RAPM, STI, TC, THORAX, TSACO and VETRECCR)
+
+ClassGarmnd BT 
+Frutiger LT Pro 
+Frutiger LT Std
+
+
+GLYPHS_2 - Online Journals (BMJDRC, BMJGAST, BMJGH, BMJHCI, BMJNPH, BMJOPEN, BMJOPENRESPRES, BMJOPHTH, BMJOQ, BMJOS, BMJOSEM, BMJPO, ESMOOPEN, FMCH, GPSYCH, IJGC, LUPUS, OPENHEART, RMDOPEN, SVN, VETRECO and WJPS)
+
+ITC New Baskerville 
+Helvetica Neue LT Std 
+Helvetica LT Std
+
+
+GLYPHS_3 - EBM, EBN, VETERINARY RECORD
+
+Duplicate Ionic
+MetaBoldCELF
+Meta Pro Bold
+Meta Pro Light
+Meta Pro Medium
+Meta Pro Normal
+Meta Serif Pro Book
+MetaHeadlineOT
+Meta Book Lf
+Rotis Serif Std
+
+
+GLYPHS_4
+
+Dax
+Schneidler BT
+Zurich BT
+ZurichLightCondensedBT

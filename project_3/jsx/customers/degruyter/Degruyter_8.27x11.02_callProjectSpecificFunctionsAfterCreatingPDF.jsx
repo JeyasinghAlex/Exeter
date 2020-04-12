@@ -1,0 +1,1 @@
+﻿export_table_as_jpeg("//floatBlock//div[@class='jrnlTblBlock']");

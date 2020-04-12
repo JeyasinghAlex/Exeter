@@ -1,0 +1,1 @@
+﻿moveVisitWebInfo("//div[@class='jrnlVisitWebInfo']");

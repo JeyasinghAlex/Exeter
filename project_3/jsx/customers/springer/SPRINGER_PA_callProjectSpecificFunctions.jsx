@@ -1,0 +1,1 @@
+﻿removeBelowRuleForArtype("//div[@doi='PA-9-2-00002'  or @doi='PA-9-2-00005' or @doi='PA-9-2-00003' or @doi='PA-9-2-00004' or @doi='PA-9-3-00005' or @doi='PA-9-3-00006' or @doi='PA-9-3-00003' or @doi='PA-9-3-00004' or @doi='PA-D-17-00003' or @doi='PA-D-17-00011' or @doi='PA-D-17-00004' or @doi='PA-D-17-00001' or @doi='PA-9-4-00001'] ")

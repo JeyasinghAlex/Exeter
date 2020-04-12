@@ -1,0 +1,2 @@
+﻿appendixBgScreen("//div[@class='jrnlAppBlock']/div[@class='jrnlAppBlock']","jrnlAppHead2|jrnlAppHead2_H1",6);
+appendixBgScreen("//div[@class='jrnlAppGroup']/div[@class='jrnlAppBlock']", "TEMPLATE5_jrnlAppHead2|jrnlAppHead2_H1|jrnlAppHead2|jrnlTblCaption", 6, 12, 6, 18);

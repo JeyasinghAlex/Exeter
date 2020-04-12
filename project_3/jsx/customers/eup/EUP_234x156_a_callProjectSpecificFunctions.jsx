@@ -1,0 +1,1 @@
+﻿kerningValueinsertionForCharacter("//p[@pstyle='TXT_CHAP_FIRST']",20);

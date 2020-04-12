@@ -1,0 +1,1 @@
+﻿findAndReplaceSpecialCharacter("Times New Roman MT Std","Regular",'"',"Times New Roman MT Std","Regular",'"');

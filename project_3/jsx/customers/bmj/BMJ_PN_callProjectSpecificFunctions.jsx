@@ -1,0 +1,11 @@
+﻿alignStubFramesToAbsHead(myDoc, 'STUB_COLUMN', 'jrnlAbsHead|ABS_QUOTE-O_WITH_ATTRIB|jrnlAbsPara|HWTODOIT_jrnlAbsHead|TTYF_jrnlHead1_First|ADTCE_jrnlHead1_First|jrnlHead1_First|TXT_CHAP_FIRST|MEADMYNLIS_TXT_CHAP_FIRST|IEOFTEMT_TXT_CHAP_FIRST|IEOFTEMT_jrnlHead1_First|EDITORIAL_TXT_CHAP_FIRST|MYNLHYHE_TXT_CHAP_FIRST|QUOTE-T|QUOTE-O', 'ascent');
+//~ moveNodesOnFrmToIntext('METAINFO', 'STUB_COLUMN', 'before', 'jrnlAffGroup', "//div[@class='back']", 'Author affiliations\r', 'jrnlAffHead', 'For numbered affiliations see end of article.\r', 'jrnlAff');
+jrnlDateCommonStyle('jrnlReDate,jrnlRevDate,jrnlAcDate');
+stackStubFrames();
+splitFramesIntoTwo("//p[@pstyle='jrnlAuthors']|//p[@pstyle='ESCY_jrnlAuthors']|//p[@pstyle='NLDA_jrnlAuthors']|//p[@pstyle='TCIN_jrnlAuthors']|//p[@pstyle='NEUROMYTHOLOGY_jrnlAuthors']|//p[@pstyle='CLCE_jrnlAuthors']|//p[@pstyle='MEADMYNLIS_jrnlAuthors']|//p[@pstyle='IEOFTEMT_jrnlAuthors']|//p[@pstyle='HWTODOIT_jrnlAuthors']|//p[@pstyle='HWTOUDIT_jrnlAuthors']|//p[@pstyle='ADTCE_jrnlAuthors']|//p[@pstyle='NLRS_jrnlAuthors']|//p[@pstyle='CARPHOLOGY_jrnlDOI']|//p[@pstyle='EDITORIAL_jrnlAuthors']|//p[@pstyle='MYNLHYHE_jrnlAuthors']|//p[@pstyle='TTYF_jrnlAuthors']");
+moveBlockToColumnBottom(162.092, "//div[@class='jrnlFNTxtBlock']", 'TXT_FN');
+placePhotos("//div[@class='body']", "//pFig[@class='ED_IMG']");
+addSpBeforePara('jrnlPresentAddrFN,jrnlCorrNoticeFN,jrnlSocialFN,jrnlAckGroup,jrnlNoteHeadFN,jrnlCollabFN,jrnlConFN,jrnlFundGroup,jrnlDisclaimerFN,jrnlConfFN,jrnlPatientFN,jrnlEthicsFN,jrnlPeerReviewFN,jrnlDataSharingFN,jrnlLicense,jrnlCopyrightStmt', 12);
+alignParaTopLineImage("//div[@class='body']", "//pFig[@class='ALIGN_PARA_TOP']");
+removeOpenAccLogo("//p[@pstyle='jrnlLicense']");
+dublin_core_metadata();

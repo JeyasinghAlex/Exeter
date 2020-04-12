@@ -1,0 +1,1 @@
+﻿changeFolioType('ATOMS|LR');

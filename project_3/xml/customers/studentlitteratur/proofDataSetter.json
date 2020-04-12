@@ -1,0 +1,181 @@
+[
+    [
+        {
+            "task": "fetch",
+            "description": "fetch manuscript xml - kriya 2.0",
+            "parameters": {
+                "url": "https://{siteName}/api/getxml/?apiKey=0e78ffad-4705-414b-836e-b6893ab3abc6&doi={doi}&customer=studentlitteratur&project={project}&xmltype=raw",
+                "path": "{customer}/{project}/{jobid}",
+                "fileName": "{doi}.xml",
+                "contentType": "application/xml",
+                "method": "GET"
+            },
+            "conditions": {
+                "type": "input",
+                "check": {
+                    "proofingVersion": "v2.0"
+                },
+                "evaluatesTo":true
+            }
+        },
+        {
+            "task": "fetchIssueXML",
+            "description": "fetch issue xml",
+            "parameters": {
+                "url": "https://{siteName}/api/getissuedata?apiKey=0e78ffad-4705-414b-836e-b6893ab3abc6&client=studentlitteratur&jrnlName={project}&fileName={project}.xml&process=getIssueXML&returnType=xml",
+                "path": "{customer}/{project}/{jobid}",
+                "fileName": "{project}.xml",
+                "contentType": "application/xml",
+                "method": "GET"
+            },
+            "conditions": {
+                "type": "input",
+                "check": {
+                    "proofingVersion": "v2.0"
+                }
+            },
+            "subarticles": [
+                {
+                    "task": "fetch",
+                    "description": "fetch sub-manuscript xml",
+                    "parameters": {
+                        "url": "https://{siteName}/api/getxml/?apiKey=0e78ffad-4705-414b-836e-b6893ab3abc6&doi={doi}&customer=studentlitteratur&project={project}&xmltype=raw",
+                        "path": "{customer}/{project}/{jobid}",
+                        "fileName": "{doi}.xml",
+                        "contentType": "application/xml",
+                        "method": "GET"
+                    },
+                    "conditions": {
+                        "type": "input",
+                        "check": {
+                            "proofingVersion": "v2.0"
+                        }
+                    }
+                }
+            ]
+        }
+    ],
+    {
+        "task": "transformxsltProc",
+        "description": "Remove track changes from xml",
+        "parameters": {
+            "xmlPath": "{customer}/{project}/{jobid}/{doi}.xml",
+            "xslPath": "includes/KJXML2PHTML/trackChanges.xsl",
+            "output": "{customer}/{project}/{jobid}/{doi}_1.xml",
+            "parameters": "doi={doi};;customer={customer};;proofType={proofType};;volume={volume};;issue={issue};;fpage={fpage}"
+        }
+    },
+    {
+        "task": "updateXML",
+        "description": "update xml",
+        "parameters": {
+            "xmlPath": "{customer}/{project}/{jobid}/{doi}_1.xml",
+            "issueXMLPath": "{customer}/{project}/{jobid}/{project}.xml",
+            "output": "{customer}/{project}/{jobid}/{doi}_2.xml",
+            "parameters": "doi={doi};;customer={customer};;proofType={proofType};;volume={volume};;issue={issue};;projectType=book"
+        }
+    },
+    {
+        "task": "transformxsltProc",
+        "description": "Transform xml to htmldoc",
+        "parameters": {
+            "xmlPath": "{customer}/{project}/{jobid}/{doi}_2.xml",
+            "xslPath": "KJXML2PHTML.xsl",
+            "output": "{customer}/{project}/{jobid}/{doi}_3.xml",
+            "parameters": "doi={doi};;client={customer};;customer={customer};;proofType={proofType};;volume={volume};;issue={issue};;fpage={fpage};;lpage={lpage};;CMYKColor={CMYKColor}"
+        }
+    },
+    {
+        "task": "getConfigXML",
+        "description": "Read config doc and retain only the required section",
+        "parameters": {
+            "xmlPath": "{customer}/{project}/{jobid}/{doi}.xml",
+            "issueXMLPath": "{customer}/{project}/{jobid}/{project}.xml",
+            "configPath": "{customer}/book_e_6x9/book_e_6x9_proofConfig.xml",
+            "output": "{customer}/{project}/{jobid}/configDoc.xml",
+            "parameters": "projectType=book"
+        },
+        "xpathParam": {
+            "articleType": "//front[1]//subj-group[@subj-group-type='display-channel']/subject",
+            "category": "//front[1]//subj-group[@subj-group-type='display-channel']/category",
+            "template": "//front[1]//subj-group[@subj-group-type='display-channel']/@data-p-template"
+        },
+        "conditions": "{articleType}_{template};;{articleType}_{category};;{category};;{articleType}"
+    },
+    {
+        "task": "resolveConditonVariables",
+        "description": "Resolve the conditons and variables used in config doc based on the htmldoc",
+        "parameters": {
+            "configXmlPath": "{customer}/{project}/{jobid}/configDoc.xml",
+            "htmlDocPath": "{customer}/{project}/{jobid}/{doi}_3.xml",
+            "output": "{customer}/{project}/{jobid}/{doi}_4.xml",
+            "parameters": "doi={doi};;customer={customer};;proofType={proofType};;volume={volume};;issue={issue}"
+        }
+    },
+    {
+        "task": "transform",
+        "description": "transform htmldoc and configWordesc to wordsecdoc",
+        "parameters": {
+            "xmlPath": "{customer}/{project}/{jobid}/{doi}_4.xml",
+            "htmlPath": "{customer}/{project}/{jobid}/{doi}_3.xml",
+            "xslPath": "configDoc2Wordsec.xsl",
+            "output": "{customer}/{project}/{jobid}/{doi}_5.xml",
+            "parameters": "doi={doi};;customer={customer};;proofType={proofType};;volume={volume};;issue={issue}"
+        }
+    },
+    {
+        "task": "transformxsltProc",
+        "description": "Cleanup empty nodes in wordsecdoc",
+        "parameters": {
+            "xmlPath": "{customer}/{project}/{jobid}/{doi}_5.xml",
+            "xslPath": "cleanUpNodes.xslt",
+            "output": "{customer}/{project}/{jobid}/{doi}_6.xml",
+            "parameters": "doi={doi};;customer={customer};;proofType={proofType};;volume={volume};;issue={issue}"
+        }
+    },
+    {
+        "task": "applyFormat",
+        "description": "Apply formating functions in js",
+        "parameters": {
+            "xmlPath": "{customer}/{project}/{jobid}/{doi}_6.xml",
+            "output": "{customer}/{project}/{jobid}/{doi}_7.xml",
+            "parameters": "doi={doi};;customer={customer};;proofType={proofType};;volume={volume};;issue={issue}"
+        }
+    },
+    {
+        "task": "transformxsltProc",
+        "description": "Transform applyformats xsl",
+        "parameters": {
+            "xmlPath": "{customer}/{project}/{jobid}/{doi}_7.xml",
+            "xslPath": "applyFormats.xsl",
+            "output": "{customer}/{project}/{jobid}/{doi}_8.xml",
+            "parameters": "doi={doi};;customer={customer};;proofType={proofType};;volume={volume};;issue={issue}"
+        }
+    },
+    {
+        "task": "transformxsltProc",
+        "description": "Transform StructureProofing xsl",
+        "parameters": {
+            "xmlPath": "{customer}/{project}/{jobid}/{doi}_8.xml",
+            "xslPath": "structureProofing.xsl",
+            "output": "{customer}/{project}/{jobid}/{doi}_9.xml",
+            "parameters": "doi={doi};;customer={customer};;proof={proofType};;volume={volume};;issue={issue};;fpage={fpage};;journal={project};;cmsId={cmsID};;issueMakeup={issueMakeup};;kriyaVersion={kriyaVersion};;journalID={templateID}"
+        }
+    },
+    {
+        "task": "custom",
+        "description": "Custom js",
+        "parameters": {
+            "xmlPath": "{customer}/{project}/{jobid}/{doi}_9.xml",
+            "output": "{customer}/{project}/{jobid}/{jobid}.xml",
+            "parameters": "doi={doi};;customer={customer};;proofType={proofType};;volume={volume};;issue={issue};;fpage={fpage};;journal={project};;cmsId={cmsID};;issueMakeup={issueMakeup};;kriyaVersion={kriyaVersion}"
+        }
+    },
+    {
+        "task": "readFile",
+        "description": "Return the data of file in path",
+        "parameters": {
+            "xmlPath": "{customer}/{project}/{jobid}/{jobid}.xml"
+        }
+    }
+]

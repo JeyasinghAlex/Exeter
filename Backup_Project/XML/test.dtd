@@ -1,0 +1,6 @@
+<!ELEMENT school (student)>
+<!ELEMENT student (name, fatherName, age, rank)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT fatherName (#PCDATA)>
+<!ELEMENT age (#PCDATA)>
+<!ELEMENT rank (#PCDATA)>
