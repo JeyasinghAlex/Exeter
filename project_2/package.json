@@ -7,7 +7,7 @@
     "ejs": "^2.7.4",
     "express": "^4.17.1",
     "xml2js": "^0.4.22",
-    "xmldom": "^0.1.27",
+    "xmldom": "^0.6.0",
     "xpath": "0.0.27"
   },
   "devDependencies": {},
